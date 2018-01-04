@@ -1,0 +1,928 @@
+% !TEX engine = xelatex
+
+\documentclass[10pt,oneside,a4paper,landscape]{memoir}
+
+\usepackage[lmargin=10mm,rmargin=10mm,bmargin=10mm,tmargin=12mm,bindingoffset=0mm,heightrounded]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{varwidth}
+\usepackage{enumitem}
+%\usepackage{datetime}
+\usepackage{amssymb}
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{10mm}
+\setlength{\TPVertModule}{10mm}
+
+\usepackage{graphicx}
+
+\setsecnumformat{}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+\setlength{\parskip}{.5\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\linespread{.75}
+
+% Fonts
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Ligatures=TeX,Scale=.68]{Archivo}
+\newfontfamily\bmrfont[Ligatures=TeX,Scale=1.5]{Istok Web}
+\newfontfamily\classfont[Ligatures=TeX,Scale=3]{Istok Web}
+\newfontfamily\subtitlefont[Ligatures=TeX,Scale=1.5]{Istok Web}
+\newfontfamily\sectionfont[Ligatures=TeX,Scale=.65]{Istok Web}
+\newfontfamily\modfont[Ligatures=TeX,Scale=1]{Istok Web}
+\newfontfamily\scfont[Ligatures=TeX,Scale=.8]{Alegreya Sans SC}
+
+% new commands
+\newcommand*\sect[1]{\section{\sectionfont{#1}}}
+
+\newcommand*\attribution[1]{\small\textit{#1}}
+
+\usepackage{xcolor}
+
+\usepackage{multicol}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains,matrix,decorations.text}
+
+\definecolor{offwhite}{HTML}{ffffff}
+
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+
+%\OnehalfSpacing
+\setaftersecskip{1mm}
+\setbeforesecskip{3mm}
+
+\setlength\columnsep{5mm}
+
+\renewcommand{\MakeTextField}[2]{{\vbox to #2{\vfill\hbox to #1{\hrulefill}}}}
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\begin{Form}
+
+\begin{multicols}{4}
+
+  \begin{minipage}{2.12\columnwidth}
+
+    \bmrfont{BASIC MOVES REFERENCE}
+
+  \end{minipage}
+
+  \smallskip
+
+\begin{minipage}{\columnwidth}
+
+\sect{HACK AND SLASH}
+
+ When you attack an enemy in melee, roll+STR. On a 10+, you deal your damage to the enemy and avoid their attack. At your option, you may choose to do +1d6 damage but expose yourself to the enemy’s attack. On a 7-9, you deal your damage to the enemy and the enemy makes an attack against you.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{VOLLEY}
+
+ When you take aim and shoot an enemy at range, roll+DEX. On a 10+, you have a clear shot - deal your damage. On a 7-9, choose one in addition to dealing your damage.
+
+ \begin{itemize}[noitemsep,topsep=0pt,leftmargin=*]
+  \renewcommand{\labelitemi}{\tiny$\blacksquare$}
+ \item  You have to move to get the shot, placing you in danger of the GM’s choice.
+ \item  You have to take what you can get: -1d6 damage.
+ \item  You have to take several shots, reducing your ammo by one.
+\end{itemize}
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{DEFEND}
+
+ When you stand in defense of a person, item, or location under attack, roll+CON. On a 10+, hold 3. On a 7-9, hold 1. So long as you stand in defense, when you or the thing you defend is attack you may spend hold, 1 for 1, to choose an option.
+ Redirect an attack from the thing you defend to yourself.
+
+ \begin{itemize}[noitemsep,topsep=0pt,leftmargin=*]
+  \renewcommand{\labelitemi}{\tiny$\blacksquare$}
+ \item  Halve the attack’s effect or damage.
+ \item  Open up the attacker to an ally, giving that ally +1 Forward against them.
+ \item  Deal damage to the attacker equal to your level.
+\end{itemize}
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{DISCERN REALITIES}
+
+ When you closely study a situation or person, roll+WIS. On a 10+, ask the GM 3 questions from the list below. On a 7-9, ask 1. Take +1 Forward when acting on the answers.
+
+ \begin{itemize}[noitemsep,topsep=0pt,leftmargin=*]
+  \renewcommand{\labelitemi}{\tiny$\blacksquare$}
+ \item  What happened here recently?
+ \item  What is about to happen?
+ \item  What should I be on the lookout for?
+ \item  What here is useful to me?
+ \item  Who’s really in control here?
+ \item  What here is not what it appears to be?
+\end{itemize}
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{SPOUT LORE}
+
+ When you consult your accumulated knowledge about something, roll+INT. On a 10+, the GM will tell you something interesting and useful about the subject relevant to your situation. On a 7-9, the GM will only tell you something interesting - it’s on you to make it useful. The GM might also ask you “How do you know this?” Tell them the truth, now.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{PARLEY}
+
+ When you have leverage on a GM character and manipulate them, roll+CHA. Leverage is something they need or want. On a hit, they ask you for something and do it if you make them a promise first. On a 7-9, they need some concrete assurance of your promise, right now.
+
+\end{minipage}
+
+ \attribution{This work is based on Dungeon World, written by Sage LaTorra and Adam Koebel, and the PlayKit Plus by Jason Shea. Licensed for reuse under CC BY 4.0. Original Google Doc created by Yochai Gal. Print as Duplex, short-edge bound. Fold in the middle.}
+
+\columnbreak
+
+\vspace*{5.5mm}
+
+\begin{minipage}{\columnwidth}
+
+\sect{DEFY DANGER}
+
+When you act despite an imminent threat or suffer a calamity, say how you deal with it and roll. If you do it...
+
+\begin{itemize}[noitemsep,topsep=0pt,leftmargin=*]
+ \renewcommand{\labelitemi}{\tiny$\blacksquare$}
+ \item  ...by powering through, +STR.
+ \item  ...by getting out of the way or acting fast, +DEX.
+ \item  ...by enduring, +CON.
+ \item  ...with quick thinking, +INT.
+ \item  ...through mental fortitude, +WIS.
+ \item  ...using charm and social grace, +CHA.
+\end{itemize}
+
+On a 10+, you do what you set out to do and the threat doesn’t come to bear. On a 7-9, you stumble, hesitate, or flinch; the GM will offer you a worse outcome, hard bargain, or ugly choice.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{AID OR INTERFERE}
+
+When you help or hinder someone, say how you do so and roll with that stat, just like Defy Danger. On a 10+, they take +1 or -2, your choice. On a 7-9 you also expose yourself to danger, retribution, or cost.
+
+\end{minipage}
+
+\smallskip
+
+\begin{tikzpicture}[
+  notenode/.style={rectangle, draw=black, very thick, minimum width=\columnwidth, minimum height=120mm},
+]
+
+\node[notenode,label={[xshift=-27.5mm, yshift=-119mm]NOTES}] (NOTES) {};
+
+\end{tikzpicture}
+
+\columnbreak
+
+\begin{minipage}{2.12\columnwidth}
+
+\begin{center}{\classfont{CLASSNAME}}\end{center}
+
+\begin{center}{\subtitlefont{CLASS SUBTITLE}}\end{center}
+
+\end{minipage}
+
+NAME: \TextField[name=name,width=.90\columnwidth,height=4.5mm,bordercolor=]{}
+
+Examples: Avon, Galadiir, Hrona, Uriel, Froia, Vitus, Xeno, Emrys, Imogen, Gannon,Thistle, Tresgoran, Dreft, Ysolde
+
+\sect{LOOK \hfill                                                         Choose one}
+
+Choose one for each, or write your own:
+
+EYES: Haunted, Sharp, Crazy, \TextField[name=eyes,width=20mm,height=4.5mm,bordercolor=]{}
+
+HAIR: Styled, Wild, Pointed Hat, Hooded, \TextField[name=hair,width=20mm,height=4.5mm,bordercolor=]{}
+
+CLOTHING: Worn, Stylish, Strange, \TextField[name=clothing,width=20mm,height=4.5mm,bordercolor=]{}
+
+BODY: Stringy, Muscled, Stout, \TextField[name=body,width=20mm,height=4.5mm,bordercolor=]{}
+
+RACE:  Human, Elf, Dwarf, Halfling, Gnome, Fey, Dragonkin, Reptilian, Orc, Hobgoblin, Kobold, Goblin, Imp, Fiend, \TextField[name=race,width=20mm,height=4.5mm,bordercolor=]{}
+
+\sect{DRIVE \hfill                                                         Choose one}
+
+\CheckBox[height=2ex,width=2ex, name=drive1, bordercolor=]{} DRIVE ONE: Text
+
+\CheckBox[height=2ex,width=2ex, name=drive2, bordercolor=]{} DRIVE TWO: Text
+
+\CheckBox[height=2ex,width=2ex, name=drive3, bordercolor=]{} DRIVE THREE: Text
+
+\sect{BACKGROUND \hfill                                                         Choose one}
+
+\CheckBox[height=2ex,width=2ex, name=bg1, bordercolor=]{} BACKGROUND ONE: Text
+
+\CheckBox[height=2ex,width=2ex, name=bg2, bordercolor=]{} BACKGROUND TWO: Text
+
+\CheckBox[height=2ex,width=2ex, name=bg3, bordercolor=]{} BACKGROUND THREE: Text
+
+\sect{BONDS}
+
+Fill in the name of one of your companions in at least one, but no more than four:
+
+\TextField[name=bond1,width=20mm,height=4.5mm,bordercolor=]{} text text text text
+
+\TextField[name=bond2,width=20mm,height=4.5mm,bordercolor=]{} text text text text
+
+\TextField[name=bond3,width=20mm,height=4.5mm,bordercolor=]{} text text text text
+
+text text text text \TextField[name=bond4,width=20mm,height=4.5mm,bordercolor=]{}; text text text
+
+\columnbreak
+
+\vspace*{12mm}
+
+%\begin{tabularx}{\columnwidth}{XXX}
+
+%\multicolumn{3}{c}{BIG BOX} \\
+
+%BOXA & BOXB & BOXC \\
+
+%\end{tabularx}
+
+\begin{tikzpicture}[
+  squarednode/.style={rectangle, draw=black, very thick, minimum width=\columnwidth, minimum height=.75\columnwidth},
+  smallsquarednode/.style={rectangle, draw=black, very thick, minimum size=.30\columnwidth},
+  microsquarednode/.style={rectangle, draw=black, very thick, minimum size=.10\columnwidth},
+  rectanglenode/.style={rectangle, draw=black, very thick, minimum width=.495\columnwidth, minimum height=.10\columnwidth},
+]
+
+%group one
+\node[squarednode,label={[xshift=-18mm, yshift=-48mm]CHARACTER SKETCH}] (A) {};
+\node[smallsquarednode,label={[xshift=-2mm, yshift=-4mm]HIT POINTS}] [draw,below=38mm of A.west,anchor=west] (B) {};
+\node[smallsquarednode,label={[xshift=-2mm, yshift=-4mm]ARMOR}] [right=3mm of B] (C) {};
+\node[smallsquarednode,label={[xshift=-2mm, yshift=-4mm]DAMAGE}] [right=3mm of C] (D) {\classfont{dX}};
+
+% group two
+\node[smallsquarednode,label={[xshift=-2mm, yshift=-19mm]LEVEL}] [draw,below=23mm of B.west,anchor=west] (E) {};
+
+\node[microsquarednode][draw,right=13mm of E.north,anchor=north] (F) {\TextField[name=micro8,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of F] (G) {\TextField[name=micro9,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of G] (H) {\TextField[name=micro10,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of H] (I) {\TextField[name=micro11,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of I] (J) {\TextField[name=micro12,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of J] (K) {\TextField[name=micro13,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode][draw,right=-.5mm of K] (L) {\TextField[name=micro14,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]2}][draw,below=-.5mm of F] (M) {\TextField[name=micro1,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]3}][draw,right=-.5mm of M] (N) {\TextField[name=micro2,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]4}][draw,right=-.5mm of N] (O) {\TextField[name=micro3,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]5}][draw,right=-.5mm of O] (P) {\TextField[name=micro4,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]6}][draw,right=-.5mm of P] (Q) {\TextField[name=micro5,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]7}][draw,right=-.5mm of Q] (R) {\TextField[name=micro6,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]8}][draw,right=-.5mm of R] (S) {\TextField[name=micro7,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+
+\node[microsquarednode,label={[xshift=2mm, yshift=-4mm]9}][draw,below=-.5mm of M] (T) {\TextField[name=micro15,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[microsquarednode,label={[xshift=1mm, yshift=-4mm]10}][draw,right=-.5mm of T] (U) {\TextField[name=micro16,bordercolor=,backgroundcolor=,width=5mm,height=5mm]{\color{white}}};
+\node[rectanglenode][draw,right=-.5mm of U] (V) {\scriptsize{LEVEL WHEN XP = CURR LEVEL + 7}};
+
+% a line
+
+% group three
+\node[smallsquarednode] [draw,below=of E] (AA) {};
+\node[smallsquarednode] [draw,right=3mm of AA] (BB) {};
+\node[smallsquarednode] [draw,right=3mm of BB] (CC) {};
+
+\node[smallsquarednode] [draw,below=6mm of AA] (DD) {};
+\node[smallsquarednode] [draw,right=3mm of DD] (EE) {};
+\node[smallsquarednode] [draw,right=3mm of EE] (FF) {};
+
+\end{tikzpicture}
+
+\begin{center}{%
+Assign these starting scores to your stats:%
+
+16 (+2), 15 (+1), 13 (+1), 12 (0), 9 (0), 8 (-1)%
+
+Your maximum HP is X+Constitution.%
+}\end{center}
+
+% now a bunch of text boxes; pay no attention to the man behind the curtain
+
+\begin{textblock}{6}(8.3,9)
+
+\linespread{1}
+
+\TextField[name=misc1,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc2,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc3,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc4,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc5,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc6,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc7,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc8,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc9,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc10,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc11,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc12,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc13,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc14,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\TextField[name=misc15,width=\columnwidth,height=4.5mm,bordercolor=]{}
+
+\linespread{.75}
+
+\end{textblock}
+
+\begin{textblock}{2}(22.3,13.75)
+
+\linespread{.5}
+
+\modfont{STR}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility1, bordercolor=]{} WEAK (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(23.2,13.77)
+  \TextField[name=str1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=str2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(24.6,13.75)
+
+\linespread{.5}
+
+\modfont{DEX}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility2, bordercolor=]{} SHAKY (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(25.5,13.77)
+  \TextField[name=dex1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=dex2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(26.9,13.75)
+
+\linespread{.5}
+
+\modfont{CON}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility3, bordercolor=]{} SICK (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(27.8,13.77)
+  \TextField[name=con1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=con2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(22.3,16.35)
+
+\linespread{.5}
+
+\modfont{INT}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility4, bordercolor=]{} STUNNED (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(23.2,16.37)
+  \TextField[name=int1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=int2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(24.6,16.35)
+
+\linespread{.5}
+
+\modfont{WIS}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility5, bordercolor=]{} CONFUSED (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(25.5,16.37)
+  \TextField[name=wis1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=wis2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(26.9,16.35)
+
+\linespread{.5}
+
+\modfont{CHA}
+
+\scfont{MOD}
+\linebreak
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{SCORE}
+
+\vspace*{.5mm}
+
+\CheckBox[height=2ex,width=2ex, name=debility6, bordercolor=]{} SCARRED (-1)
+
+\end{textblock}
+
+\begin{textblock}{2}(27.8,16.37)
+  \TextField[name=cha1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=cha2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+% and HP from earlier
+
+\begin{textblock}{2}(22.3,9.6)
+
+\linespread{.5}
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{MAX}
+
+\end{textblock}
+
+\begin{textblock}{2}(23.2,8.42)
+  \TextField[name=hp1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.5mm}
+
+  \TextField[name=hp2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(25,8.52)
+  \TextField[name=armor,bordercolor=,width=10mm,height=10mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(22.65,10.75)
+  \TextField[name=level,bordercolor=,width=10mm,height=10mm]{\color{white}}
+\end{textblock}
+
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{4}
+
+{\bmrfont{STARTING MOVES}}
+
+\textbf{You start with these moves:}
+
+\begin{minipage}{\columnwidth}
+
+\sect{MOVE ONE}
+
+Nogoth Taur'ohtar ron rangwa amin amin uuma malia.
+
+\begin{itemize}[noitemsep,topsep=0pt]
+ \renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+ \item  Lle naa vanima lle anta amin tu quel kaima manke naa lye omentien? Manke mani er amin naa lle nai.
+\end{itemize}
+
+\textit{When you} llie n'vanima ar' lle atara lanneina amin sinta lle Neuma! malia ten' vasa? Lle naa vanima yala onna en' alu quel kaima Iire?
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{MOVE TWO}
+
+Nim'ohtar toror' taur'ohtarie amin autien rath manke naa i'omentien?
+
+\begin{itemize}[noitemsep,topsep=0pt]
+ \renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+ \item  Nae saian luume' Tulien ama tyelka amin hiraetha.
+ \item  Nogoth amin autien rath lle holma ve' edan khelek hurro'.
+ \item  Toror' Taur'ohtarie mereth en draugrim tangwa en' templa ram en' templa.
+\end{itemize}
+
+Elea ie' dome lle naa haran e' nausalle ohtar en oionaaru quel marth.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{MOVE THREE}
+
+'Kshonna, wanya luhta kanta goth en gothamin tintila, kemen. Cormamin niuve tenna' ta elea lle au' Ear'quessir Peredhil tula, vasa ar' yulna en i'mereth. Lle rangwa amin lle desiel Wethrinaerea caran pinnath. Creoso, mellonamin Taur'amandil Amandil Iire? Amin merna quen lanta kaima aa' lasser en lle coia orn n' omenta gurtha tenna' telwan san'.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{MOVE FOUR}
+
+Mereth en draugrim Cam'wethrin i'quelin mori'quessier naa ba mori'quessir quel fara. Menomenta amin naa tualle quel fara lle maa quel. Elenya rwalaerea lle ista amin quella no' amin amin feuya ten' lle. Laara'tincoras amin autien rath amin fauka manke naa lye lle autien? Nogoth tula, vasa ar' yulna en i'mereth Elenya soora sen ta.
+
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{ADVANCED MOVES}}
+
+\textbf{When you gain a level from 2-5, choose from these moves:}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv1, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move. When you \textbf{Starting Move}, text, text, text.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv2, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move. When you \textit{text of move and such}:
+
+\begin{itemize}[noitemsep,topsep=0pt]
+ \renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+ \item  text
+ \item  text
+ \item  text
+\end{itemize}
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv3, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv4, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv5, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv6, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv7, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv8, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv9, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=adv10, bordercolor=]{} ADVANCED MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{MASTER MOVES}}
+
+\textbf{When you gain a level from 6-10, choose from these moves or the 2-5 moves:}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas1, bordercolor=]{} MASTER MOVE}
+
+Text of Move. When you \textbf{Starting Move}, text, text, text.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas2, bordercolor=]{} MASTER MOVE}
+
+Text of Move. When you \textit{text of move and such}:
+
+\begin{itemize}[noitemsep,topsep=0pt]
+ \renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+ \item  text
+ \item  text
+ \item  text
+\end{itemize}
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas3, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas4, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas5, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas6, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas7, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas8, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas9, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\begin{minipage}{\columnwidth}
+
+\sect{\CheckBox[height=1.5ex,width=1.5ex, name=mas10, bordercolor=]{} MASTER MOVE}
+
+Text of Move.
+
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{GEAR}}
+
+Your load is x+STR. You start with:
+
+Items and such (5 uses, X weight)  \CheckBox[height=2ex,width=2ex, name=uses1, bordercolor=]{}\CheckBox[height=2ex,width=2ex, name=uses2, bordercolor=]{}\CheckBox[height=2ex,width=2ex, name=uses3, bordercolor=]{}\CheckBox[height=2ex,width=2ex, name=uses4, bordercolor=]{}\CheckBox[height=2ex,width=2ex, name=uses5, bordercolor=]{}
+
+\begin{itemize}[noitemsep,topsep=0pt]
+ \renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+ \item  Tool or some such thing
+ \item  Item or whatever
+\end{itemize}
+
+\textit{Choose your preparation:}
+
+\CheckBox[height=1.5ex,width=1.5ex, name=gear1, bordercolor=]{} Armor of some kind (tag, X armor, X weight)
+
+\CheckBox[height=1.5ex,width=1.5ex, name=gear2, bordercolor=]{} Healing potions, or bandages
+
+\textit{Choose your weapon:}
+
+\CheckBox[height=1.5ex,width=1.5ex, name=weapon1, bordercolor=]{} Weapon (tag, tag, X weight)
+
+\CheckBox[height=1.5ex,width=1.5ex, name=weapon2, bordercolor=]{} Weapon (tag, tag, X weight)
+
+\begin{tabularx}{\columnwidth}{@{}p{35mm}@{ }X@{ }X}
+ITEM & WEIGHT & VALUE \\
+\TextField[name=item1,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt1,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val1,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item2,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt2,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val2,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item3,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt3,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val3,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item4,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt4,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val4,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item5,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt5,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val5,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item6,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt6,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val6,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item7,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt7,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val7,bordercolor=,width=13mm,height=4.5mm]{} \\
+\TextField[name=item8,bordercolor=,width=34mm,height=4.5mm]{} & \TextField[name=wt8,bordercolor=,width=13mm,height=4.5mm]{} & \TextField[name=val8,bordercolor=,width=13mm,height=4.5mm]{} \\
+\end{tabularx}
+
+\vspace*{1.5mm}
+
+\begin{tikzpicture}[
+  loadnode/.style={rectangle, draw=black, very thick, minimum size=.30\columnwidth},
+  coinnode/.style={rectangle, draw=black, very thick, minimum width=.60\columnwidth, minimum height=.30\columnwidth},
+]
+
+\node[coinnode,label={[xshift=-2mm, yshift=-4mm]COINS \& TREASURE}] [] (XX) {};
+\node[loadnode] [right=3mm of XX] (YY) {};
+
+\end{tikzpicture}
+
+\begin{textblock}{2}(26.6,12.35)
+
+\linespread{.5}
+
+\modfont{LOAD}
+
+\vspace*{4mm}
+
+\space\space\rule{.80\textwidth}{.4pt}
+
+\scfont{MAX}
+
+\end{textblock}
+
+\begin{textblock}{2}(27.5,12.35)
+  \TextField[name=load1,bordercolor=,width=7mm,height=7mm]{\color{white}}
+
+  \vspace*{1.1mm}
+
+  \TextField[name=load2,bordercolor=,width=7mm,height=5mm]{\color{white}}
+\end{textblock}
+
+\begin{textblock}{2}(22.5,12.5)
+  \TextField[name=coins1,multiline=true,bordercolor=,width=33mm,height=12mm]{\color{white}}
+\end{textblock}
+
+\vfill
+
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{4}
+
+% spells; remember each checkbox needs a unique name
+
+{\bmrfont{LEVEL 1 SPELLS}}
+
+\begin{minipage}{\columnwidth}
+\CheckBox[height=1.5ex,width=1.5ex, name=sp1a, bordercolor=]{} SPELL NAME: Text of spell. Text of spell. Text of spell. Text of spell .Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell.
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{LEVEL 3 SPELLS}}
+
+\begin{minipage}{\columnwidth}
+\CheckBox[height=1.5ex,width=1.5ex, name=sp3a, bordercolor=]{} SPELL NAME: Text of spell. Text of spell. Text of spell. Text of spell .Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell.
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{LEVEL 5 SPELLS}}
+
+\begin{minipage}{\columnwidth}
+\CheckBox[height=1.5ex,width=1.5ex, name=sp5a, bordercolor=]{} SPELL NAME: Text of spell. Text of spell. Text of spell. Text of spell .Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell.
+\end{minipage}
+
+\columnbreak
+
+{\bmrfont{LEVEL 7 SPELLS}}
+
+\begin{minipage}{\columnwidth}
+\CheckBox[height=1.5ex,width=1.5ex, name=sp7a, bordercolor=]{} SPELL NAME: Text of spell. Text of spell. Text of spell. Text of spell .Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell.
+\end{minipage}
+
+{\bmrfont{LEVEL 9 SPELLS}}
+
+\begin{minipage}{\columnwidth}
+\CheckBox[height=1.5ex,width=1.5ex, name=sp9a, bordercolor=]{} SPELL NAME: Text of spell. Text of spell. Text of spell. Text of spell .Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell. Text of spell.
+\end{minipage}
+
+\end{multicols}
+
+\end{Form}
+
+\end{document}
