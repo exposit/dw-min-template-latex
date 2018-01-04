@@ -7,7 +7,7 @@ Modeled on Yochai Gal's excellent [google docs](https://docs.google.com/document
 
 The resulting playbook is a fillable pdf.
 
-* You need LaTeX installed (with xelatex) to use this. You'll need at least basic LaTeX knowledge.
+* You need LaTeX installed (with xelatex) to use this. You will also need at least a basic understanding of LaTeX.
 
 * Some elements use absolute positioning, mostly the textfields and overlays. So if you add lines in a column above one of these positioned elements, it'll be wonky until you also adjust the positioning. This is kind of a PITA but should really only be an issue when adding gear.
 
