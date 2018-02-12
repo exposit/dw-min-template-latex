@@ -2,20 +2,31 @@
 
 \documentclass[10pt,oneside,a4paper,landscape]{memoir}
 
+% set paper layout
 \usepackage[lmargin=10mm,rmargin=10mm,bmargin=10mm,tmargin=12mm,bindingoffset=0mm,heightrounded]{geometry}
 
+% allows non-engilish characters, and stops greater then or less then signs causing errors in the text.
 \usepackage[T1]{fontenc}
+
+% allows different hypenation ules to be accomadated
 \usepackage [english]{babel}
+
+% manages the style for quotation marks " "
 \usepackage [autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 
-\usepackage{varwidth}
+% supports variable width minipages used to layout the character sheet
+%\usepackage{varwidth}
+
+% Controls layout of lists and bullet points  - needed to keep them tight
 \usepackage{enumitem}
+
 %\usepackage{datetime}
+
 \usepackage{amssymb}
 
 \usepackage[absolute]{textpos}
-\setlength{\TPHorizModule}{10mm}
+%\setlength{\TPHorizModule}{10mm}
 \setlength{\TPVertModule}{10mm}
 
 \usepackage{graphicx}
@@ -25,7 +36,7 @@
 \newlength\tindent
 \setlength{\tindent}{\parindent}
 \setlength{\parindent}{0pt}
-\renewcommand{\indent}{\hspace*{\tindent}}
+%\renewcommand{\indent}{\hspace*{\tindent}}
 \setlength{\parskip}{.5\baselineskip}%
 \setlength{\parindent}{0pt}%
 
@@ -35,21 +46,21 @@
 
 \usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Ligatures=TeX,Scale=.68]{Archivo}
+%\setmainfont[Ligatures=TeX,Scale=.68]{Archivo}
 \newfontfamily\bmrfont[Ligatures=TeX,Scale=1.5]{Istok Web}
 \newfontfamily\classfont[Ligatures=TeX,Scale=3]{Istok Web}
 \newfontfamily\subtitlefont[Ligatures=TeX,Scale=1.5]{Istok Web}
 \newfontfamily\sectionfont[Ligatures=TeX,Scale=.65]{Istok Web}
 \newfontfamily\modfont[Ligatures=TeX,Scale=1]{Istok Web}
 \newfontfamily\scfont[Ligatures=TeX,Scale=.8]{Alegreya Sans SC}
-
+%
 % new commands
+
 \newcommand*\sect[1]{\section{\sectionfont{#1}}}
 
 \newcommand*\attribution[1]{\small\textit{#1}}
 
 \usepackage{xcolor}
-
 \usepackage{multicol}
 
 \usepackage{tikz}
@@ -59,7 +70,7 @@
 
 \usepackage[hidelinks]{hyperref}
 
-\pagestyle{empty}
+%\pagestyle{empty}
 
 %\OnehalfSpacing
 \setaftersecskip{1mm}
@@ -69,8 +80,9 @@
 
 \renewcommand{\MakeTextField}[2]{{\vbox to #2{\vfill\hbox to #1{\hrulefill}}}}
 
-%%% BEGIN DOCUMENT
-\begin{document}
+
+%%% BEGIN DOCUMENT\begin{document}
+
 
 \begin{Form}
 
@@ -105,7 +117,7 @@
  \item  You have to take several shots, reducing your ammo by one.
 \end{itemize}
 
-\end{minipage}
+\end{minipage}%
 
 \begin{minipage}{\columnwidth}
 
@@ -114,7 +126,7 @@
  When you stand in defense of a person, item, or location under attack, roll+CON. On a 10+, hold 3. On a 7-9, hold 1. So long as you stand in defense, when you or the thing you defend is attack you may spend hold, 1 for 1, to choose an option.
  Redirect an attack from the thing you defend to yourself.
 
- \begin{itemize}[noitemsep,topsep=0pt,leftmargin=*]
+ \begin{itemize}[noitemsep,topsep=0pt,leftmargin=*
   \renewcommand{\labelitemi}{\tiny$\blacksquare$}
  \item  Halve the attack’s effect or damage.
  \item  Open up the attacker to an ally, giving that ally +1 Forward against them.
@@ -123,7 +135,7 @@
 
 \end{minipage}
 
-\begin{minipage}{\columnwidth}
+\begin{minipage}{\columnwidth
 
 \sect{DISCERN REALITIES}
 
